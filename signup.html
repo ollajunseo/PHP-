@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>회원가입</title>
+</head>
+<link rel="stylesheet" href="/web/signup.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<body>
+<header>
+	<span class="logo">Bidscore</span>
+	<nav>
+		<ul>
+			<li><a href="http://localhost/web/main#home">HOME</a></li>
+			<li><a href="http://localhost/web/main#section">LOGIN</a></li>
+			<li><a href="http://localhost/web/main#alpha">GUIDE</a></li>
+			<li><a href="#">COMPANY INFO</a></li>
+		</ul>
+	</nav>
+</header>
+<main id="home">
+	<div class="signup_box">
+		<table id="signup">
+			<thead>
+			<tr>
+				<td style="width: 120px; background-color: #2c3e50; color: white;" >정보</td>
+				<td style="background-color: #2c3e50; color: white">입력</td>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>아이디</td>
+				<td><input type="text" id="members_id" maxlength="20" placeholder="아이디를 입력하세요" style="padding: 3px"><button type="button" id="confirmId">중복확인</button></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password" id="members_pw" maxlength="20" placeholder="비밀번호를 입력하세요"></td>
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td><input type="type" id="members_nm" maxlength="20" placeholder="이름을 입력하세요"></td>
+			</tr>
+			<tr>
+				<td>이메일</td>
+				<td><input type="email" id="members_email" placeholder="이메일을 입력하세요"></td>
+			</tr>
+			<tr>
+				<td>생년월일</td>
+				<td><input type="date" id="members_birth"></td>
+			</tr>
+			</tbody>
+		</table>
+		<button type="button" id="sign">회원 가입</button>
+		<button type="button" class="back" onclick="history.go(-1)">뒤로 가기</button>
+	</div>
+</main>
+</body>
+<footer>
+	<div class="inner">
+		<div class="footer-message">Developer YeJunSeo</div>
+		<div class="footer-contact">Contact: yjs90305@gmail.com</div>
+		<div class="footer-copyright">Copyrigh 2024 All ⓒ rights reserved</div>
+	</div>
+</footer>
+<script src="/web/js_signup.js"></script>
+</html>

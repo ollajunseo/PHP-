@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>업체 검색</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/web/searchpage.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<body>
+<header>
+	<span class="logo">Bidscore</span>
+	<nav>
+		<ul>
+			<li><a href="http://localhost/web/main#home">HOME</a></li>
+			<li><a href="http://localhost/web/main#alpha">GUIDE</a></li>
+			<li><a href="#">LOGOUT</a></li>
+			<li><a href="#">COMPANY INFO</a></li>
+		</ul>
+	</nav>
+</header>
+<main id="home">
+	<div class="section">
+<div id="searchBox">
+
+</div>
+		<div class="mainBoard">
+			<div class="top">
+				<select class="select_text1">
+					<option>100개</option>
+					<option>300개</option>
+					<option>500개</option>
+				</select>
+				<input type="text" placeholder="업체/주소/사업자번호" id="search_text" maxlength="10">
+				<img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png" id="search_btn">
+			</div>
+			<table id="searchBoard">
+				<thead>
+				<tr>
+					<th>NO</th>
+					<th>업체명</th>
+					<th>대표</th>
+					<th>종목</th>
+					<th>사업자 번호</th>
+					<th>주소</th>
+					<th>우편번호</th>
+					<th>전화번호</th>
+				</tr>
+				</thead>
+				<?php if (isset($company_info)): ?>
+				<tbody>
+				<?php foreach ($company_info as $info): ?>
+				<tr>
+					<td><?php echo $info->Num; ?></td>
+					<td><?php echo $info->company_nm; ?></td>
+					<td><?php echo $info->Business_num; ?></td>
+					<td><?php echo $info->company_section; ?></td>
+					<td><?php echo $info->company_boss; ?></td>
+					<td><?php echo $info->company_address; ?></td>
+					<td><?php echo $info->address_num; ?></td>
+					<td><?php echo $info->company_phone; ?></td>
+				</tr>
+				<?php endforeach; ?>
+				</tbody>
+				<?php else: ?>
+				<tbody>
+				<tr>
+					<td colspan="8">No company information available</td>
+				</tr>
+				</tbody>
+				<?php endif; ?>
+			</table>
+			<button type="button" id="backbtn">뒤로가기</button>
+		</div>
+	</div>
+	<div class="page_wrap">
+		<div class="page_nation">
+			<?php if ($pagination['prev_page']): ?>
+			<a class="arrow prev" href="<?php echo $pagination['prev_page']; ?>"></a>
+			<?php endif; ?>
+			<?php foreach ($pagination['pages'] as $page): ?>
+			<?php if ($page['is_current']): ?>
+			<a class="active"><?php echo $page['num']; ?></a>
+			<?php else: ?>
+			<a href="<?php echo $page['url']; ?>"><?php echo $page['num']; ?></a>
+			<?php endif; ?>
+			<?php endforeach; ?>
+			<?php if ($pagination['next_page']): ?>
+			<a class="arrow next" href="<?php echo $pagination['next_page']; ?>"></a>
+			<?php endif; ?>
+		</div>
+	</div>
+
+</main>
+</body>
+<script src="/web/search.js"></script>
+<footer>
+	<div class="inner">
+		<div class="footer-message">Developer YeJunSeo</div>
+		<div class="footer-contact">Contact: yjs90305@gmail.com</div>
+		<div class="footer-copyright">Copyrigh 2024 All ⓒ rights reserved</div>
+	</div>
+</footer>
+
+</html>

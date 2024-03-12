@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BIDSCORE PROJECT</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/web/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<body>
+<header>
+	<span class="logo">Bidscore</span>
+	<?php if(!$mem_id){
+?>
+	<nav>
+		<ul>
+			<li><a href="#home">HOME</a></li>
+			<li><a href="#section">LOGIN</a></li>
+			<li><a href="#alpha">GUIDE</a></li>
+			<li><a href="signup/insertID">SIGN UP</a></li>
+			<li><a href="#">COMPANY INFO</a></li>
+		</ul>
+	</nav>
+	<?php
+		}else{
+		?>
+	<nav>
+		<ul>
+			<li><a href="#home">HOME</a></li>
+			<li><a href="#alpha">GUIDE</a></li>
+			<li><a href="#">COMPANY INFO</a></li>
+		</ul>
+	</nav>
+	<?php
+		}
+		?>
+</header>
+<main id="home">
+	<div class="area">
+		<div class="slides">
+			<div class="active" style="background-image: url('https://cdn.pixabay.com/photo/2016/07/01/04/42/singapore-river-1490396_1280.jpg'); background-size: cover;"></div>
+			<div class="slide" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/29/09/16/architecture-1868667_1280.jpg'); background-size: cover;"></div>
+			<div class="slide"style="background-image: url('https://cdn.pixabay.com/photo/2017/05/02/15/34/city-2278497_1280.jpg');  background-size: cover;"></div>
+		</div>
+		<div class="side-btns">
+			<div class="prev">
+				<span><i class="fas fa-angle-left"></i></span>
+			</div>
+			<div class="next">
+				<span><i class="fas fa-angle-right"></i></span>
+			</div>
+		</div>
+	</div>
+	<div id="section">
+		<div class="board">
+			<h1 id="enter">USE OUR SERVICE</h1>
+			<button type="button" id="go-board">Go To Search</button>
+		</div>
+		<?php if(!$mem_id){
+?>
+		<div class="login">
+			<div class="login-wrapper">
+				<h2>LOGIN</h2>
+				<form id="login-form">
+					<input type="text" name="userName" placeholder="Id" id="mem_id">
+					<input type="password" name="userPassword" placeholder="Password" id="mem_pw">
+					<input type="button" value="Login" id="confirm">
+				</form>
+			</div>
+		</div>
+		<?php
+		}else{
+		?>
+		<div class="welcome">
+			<span class="welcome_mem"><?php echo $mem_nm?> 회원님</span>
+			<br>
+			<span style="font-size: 30px">Have a goodday</span>
+			<br>
+			<button type="button" id="mem_logout">LOGOUT</button>
+		</div>
+		<?php
+		}
+		?>
+	</div>
+	<div id="alpha" align="center">
+		<iframe width="1000px" height="500px" style="margin-top: 80px" src="https://www.youtube.com/embed/85pzdrA4Z4Y?si=Qz9j6Qg1oZLMFghx"
+				title="YouTube video player" frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+		</iframe>
+	</div>
+</main>
+</body>
+<footer>
+	<div class="inner">
+		<div class="footer-message">Developer YeJunSeo</div>
+		<div class="footer-contact">Contact: yjs90305@gmail.com</div>
+		<div class="footer-copyright">Copyrigh 2024 All ⓒ rights reserved</div>
+	</div>
+</footer>
+<script src="/web/main.js"></script>
+</html>
